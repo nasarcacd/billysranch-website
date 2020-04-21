@@ -1,22 +1,12 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-
-
-const useStyles = makeStyles(theme => ({
-  title: {
-    color: theme.palette.common.green,
-    //fontWeight: 700
-  }
-}));
+import Container from '@material-ui/core/Container';
+import PhotoGallery from '../../components/ui/photo-gallery/sigle-line-grid-list.component';
 
 const HomePage = () => {
-    const classes = useStyles();
     return(
-    <div>
-        <span className={classes.title}>home Page</span>
-    </div>
-    );
-    
-};
+      <Container maxWidth="md">
+        <PhotoGallery />
+      </Container>
+)};
 
 export default HomePage;
