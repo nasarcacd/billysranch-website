@@ -1,7 +1,7 @@
 import React from 'react';
 
 const RestaurantPage = () => (
-    <h1>Restaurant Page</h1>
+    <span>Restaurant Page</span>
 );
 
 export default RestaurantPage;

@@ -1,7 +1,8 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import './App.css';
+import { ThemeProvider } from '@material-ui/core/styles';
+import theme from './components/ui/Theme';
 
 import HomePage from './pages/homepage/homepage.component';
 import RestaurantPage from './pages/restaurantpage/restaurantpage.component';
@@ -11,7 +12,7 @@ import Header from './components/header/header.component';
 
 function App() {
   return (
-    <div>
+    <ThemeProvider theme={theme}>
         <Header />
         <Switch>
           <Route exact path='/' component={HomePage} />
@@ -19,7 +20,7 @@ function App() {
           <Route path='/lodgement' component={LodgementPage} />
           <Route path='/contact' component={ContactPage} />
         </Switch>
-    </div>
+    </ThemeProvider>
   );
 }
 
