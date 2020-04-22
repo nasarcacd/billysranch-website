@@ -9,10 +9,12 @@ import { makeStyles } from '@material-ui/core/styles';
 import logo from '../../assets/br_logo.svg';
 
 const useStyles = makeStyles(theme => ({
+  appBar: {
+    backgroundColor: theme.palette.common.white
+  },
   toolbarMargin: {
     ...theme.mixins.toolbar,
-    marginBottom: '3em',
-    ...theme.sha
+    marginBottom: '3em'
   },
   logo: {
     height: '7em'
@@ -24,6 +26,7 @@ const useStyles = makeStyles(theme => ({
     ...theme.typography.tab,
     minWidth: 10,
     marginLeft: "25px",
+    color: theme.palette.common.black
   },
   indicator: {
     color: theme.palette.common.brown
@@ -73,7 +76,7 @@ const Header = () => {
 
   return(
     <React.Fragment>
-      <AppBar color='primary'>
+      <AppBar className={classes.appBar}>
         <Toolbar>
           <img alt='company logo' className={classes.logo} src={logo} />
           <Tabs 

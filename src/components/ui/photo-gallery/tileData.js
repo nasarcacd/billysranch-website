@@ -14,51 +14,61 @@ const tileData = [
       img: image1,
       title: 'Chiliguaro',
       author: 'Billy',
+      cols: 2,
     },
     {
      img: image2,
      title: 'Cabinas',
      author: 'Billy',
+     cols: 1,
    },
    {
      img: image3,
      title: 'Gifs',
      author: 'Billy',
+     cols: 3,
    },
    {
      img: image4,
      title: 'Cabina',
      author: 'Billy',
+     cols: 2,
    },
    {
      img: image5,
      title: 'Express',
      author: 'Billy',
+     cols: 2,
    },
    {
      img: image6,
      title: 'Pool',
      author: 'Billy',
+     cols: 4,
    },
    {
      img: image7,
      title: 'Hamburguesa',
      author: 'Billy',
+     cols: 2,
    },
    {
      img: image8,
      title: 'Postres',
      author: 'Billy',
+     cols: 2,
    },
    {
      img: image9,
      title: 'Surtido',
      author: 'Billy',
+     cols: 3,
    },
    {
      img: image10,
      title: 'Camas',
      author: 'Billy',
+     cols: 2,
    }
   ];
 
