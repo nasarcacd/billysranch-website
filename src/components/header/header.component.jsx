@@ -39,7 +39,7 @@ const useStyles = makeStyles(theme => ({
 
     [theme.breakpoints.down('sm')]: {
       marginLeft: '0rem',
-      fontSize: '0.4rem'
+      fontSize: '0.7rem'
     }
   },
   indicator: {
