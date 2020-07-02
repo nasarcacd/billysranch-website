@@ -1,7 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 
 const useStyles = makeStyles((theme) => ({
@@ -10,7 +9,6 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.grey[800],
     color: theme.palette.common.white,
     marginBottom: theme.spacing(4),
-    backgroundImage: 'url(https://source.unsplash.com/random)',
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
@@ -25,12 +23,26 @@ const useStyles = makeStyles((theme) => ({
   },
   mainFeaturedPostContent: {
     position: 'relative',
-    padding: theme.spacing(3),
-    [theme.breakpoints.up('md')]: {
-      padding: theme.spacing(6),
-      paddingRight: 0,
+    padding: theme.spacing(6),
+
+    [theme.breakpoints.down('sm')]: {
+      padding: theme.spacing(3),
     },
   },
+  title: {
+    fontSize: '2.5rem',
+
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '1.5rem',
+    },
+  },
+  description: {
+    fontSize: '1.5rem',
+
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '1rem',
+    },
+  }
 }));
 
 const MainFeaturedPost = () => {
@@ -52,12 +64,12 @@ const MainFeaturedPost = () => {
       <Grid container>
         <Grid item md={6}>
           <div className={classes.mainFeaturedPostContent}>
-            <Typography component="h1" variant="h3" color="inherit" gutterBottom>
+            <p className={classes.title}>
               {post.title}
-            </Typography>
-            <Typography variant="h5" color="inherit" paragraph>
+            </p>
+            <p className={classes.description}>
               {post.description}
-            </Typography>
+            </p>
           </div>
         </Grid>
       </Grid>

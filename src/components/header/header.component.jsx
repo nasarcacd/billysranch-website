@@ -14,10 +14,19 @@ const useStyles = makeStyles(theme => ({
   },
   toolbarMargin: {
     ...theme.mixins.toolbar,
-    marginBottom: '3em'
+    marginBottom: '3em',
+
+    [theme.breakpoints.down('sm')]: {
+      marginBottom: '1rem',
+    }
+
   },
   logo: {
-    height: '7em'
+    height: '7em',
+
+    [theme.breakpoints.down('sm')]: {
+      height: '3rem',
+    }
   },
   tapContainer: {
     marginLeft: 'auto',
@@ -25,8 +34,13 @@ const useStyles = makeStyles(theme => ({
   tab: {
     ...theme.typography.tab,
     minWidth: 10,
-    marginLeft: "25px",
-    color: theme.palette.common.black
+    marginLeft: '4rem',
+    color: theme.palette.common.black,
+
+    [theme.breakpoints.down('sm')]: {
+      marginLeft: '0rem',
+      fontSize: '0.4rem'
+    }
   },
   indicator: {
     color: theme.palette.common.brown
@@ -84,7 +98,9 @@ const Header = () => {
             onChange={handleChange} 
             className={classes.tapContainer}
             aria-label='Tab Menu'
-            indicatorColor='secondary'>
+            indicatorColor='secondary'
+            variant="scrollable"
+            scrollButtons="auto">
             {menuItemsMap.map((item) => (
               <Tab key={item.value} className={classes.tab} component={Link} label={item.label} to={item.route} />
             ))}
