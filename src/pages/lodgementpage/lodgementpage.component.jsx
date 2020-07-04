@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardHeader from '@material-ui/core/CardHeader';
@@ -6,74 +6,12 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
 import StarIcon from '@material-ui/icons/StarBorder';
 import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-
-const useStyles = makeStyles((theme) => ({
-    '@global': {
-      ul: {
-        margin: 0,
-        padding: 0,
-        listStyle: 'none',
-      },
-    },
-    heroContent: {
-      padding: theme.spacing(8, 0, 6),
-    },
-    cardHeader: {
-      backgroundColor:
-        theme.palette.type === 'light' ? theme.palette.grey[200] : theme.palette.grey[700],
-    },
-    cardPricing: {
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'baseline',
-      marginBottom: theme.spacing(2),
-    }
-  }));
-  
-  const mostPopularCabin = 'Cabina Estándar';
-
-  const tiers = [
-    {
-      title: 'Cabina Delux',
-      price: '12',
-      description: [
-        '1 disponible',
-        '1 Cama matrimonial',
-        '1 Cama individual',
-        'A/C, TV, Baño Privado',
-        'Mini Refri y Coffee Macker',
-        'Máximo 6 personas'
-     ]
-    },
-    {
-      title: mostPopularCabin,
-      subheader: 'Más Popular',
-      price: '12',
-      description: [
-        '2 disponibles',
-        '1 Cama matrimonial',
-        'A/C, TV, Baño Privado',
-        'Mini Refri y Coffee Macker',
-        'Máximo 4 personas',
-     ]
-    },
-    {
-      title: 'Cabina Familiar',
-      price: '12',
-      description: [
-        '1 disponible',
-        '2 Camas matrimonial',
-        'A/C, TV, Baño Privado',
-        'Mini Refri y Coffee Macker',
-        'Balcón con grandiosa vista',
-        'Máximo 6 personas'
-      ]
-    },
-  ];
+import useStyles from './lodgementpage.styles';
+import { cabainsInfo, mostPopularCabin } from './cabains-info';
 
 const LodgementPage = () => {
+    //const [cabainsInfoState] = useState(cabainsInfo);
     const classes = useStyles();
     return (
     <React.Fragment>
@@ -89,9 +27,9 @@ const LodgementPage = () => {
       {/* End hero unit */}
       <Container maxWidth="md" component="main">
         <Grid container spacing={5} alignItems="flex-end">
-          {tiers.map((tier) => (
+          {cabainsInfo.map((tier) => (
             // Enterprise card is full width at sm breakpoint
-            <Grid item key={tier.title} xs={12} sm={tier.title === 'Enterprise' ? 12 : 6} md={4}>
+            <Grid item key={tier.title} xs={12} sm={6} md={4} lg={4}>
               <Card>
                 <CardHeader
                   title={tier.title}
