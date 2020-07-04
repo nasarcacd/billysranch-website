@@ -23,36 +23,30 @@ const LodgementPage = () => {
           Todas nuestras cabinas están completamente equipadas con amplio parqueo, A/C, TV, Baño privado, WIFI, mini refri, y pila. 
         </Typography>
       </Container>
-      {/* End hero unit */}
       <Container maxWidth="md" component="main">
         <Grid container spacing={5} alignItems="flex-end">
-            {
-                console.log(cabainsInfo)
-            }
-          {
-            cabainsInfo.map((tier, index) => (
-                // Enterprise card is full width at sm breakpoint
-                <Grid item key={index} xs={12} sm={6} md={4} lg={4}>
+            {cabainsInfo.map((cabain, index) => (
+                <Grid key={index} item xs={12} sm={6} md={4} lg={4}>
                     <Card>
                         <CardHeader
-                        title={tier.title}
-                        subheader={tier.subheader}
+                        title={cabain.title}
+                        subheader={cabain.subheader}
                         titleTypographyProps={{ align: 'center' }}
                         subheaderTypographyProps={{ align: 'center' }}
-                        action={tier.title === mostPopularCabin ? <StarIcon /> : null}
+                        action={cabain.title === mostPopularCabin ? <StarIcon /> : null}
                         className={classes.cardHeader}
                         />
                         <CardContent>
                         <div className={classes.cardPricing}>
                             <Typography component="h4" variant="h5" color="textPrimary">
-                            ¢{tier.price} 
+                            ¢{cabain.price} 
                             </Typography>
                             <Typography variant="h6" color="textSecondary">
                             mil por Persona
                             </Typography>
                         </div>
                         <ul>
-                            {tier.description.map((line) => (
+                            {cabain.description.map((line) => (
                             <Typography component="li" variant="subtitle1" align="center" key={line}>
                                 {line}
                             </Typography>
@@ -61,8 +55,7 @@ const LodgementPage = () => {
                         </CardContent>
                     </Card>
                 </Grid>
-            ))
-            }
+            ))}
         </Grid>
       </Container>
     </React.Fragment>
