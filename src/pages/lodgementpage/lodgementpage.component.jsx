@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardHeader from '@material-ui/core/CardHeader';
@@ -11,7 +11,6 @@ import useStyles from './lodgementpage.styles';
 import { cabainsInfo, mostPopularCabin } from './cabains-info';
 
 const LodgementPage = () => {
-    //const [cabainsInfoState] = useState(cabainsInfo);
     const classes = useStyles();
     return (
     <React.Fragment>
@@ -27,38 +26,43 @@ const LodgementPage = () => {
       {/* End hero unit */}
       <Container maxWidth="md" component="main">
         <Grid container spacing={5} alignItems="flex-end">
-          {cabainsInfo.map((tier) => (
-            // Enterprise card is full width at sm breakpoint
-            <Grid item key={tier.title} xs={12} sm={6} md={4} lg={4}>
-              <Card>
-                <CardHeader
-                  title={tier.title}
-                  subheader={tier.subheader}
-                  titleTypographyProps={{ align: 'center' }}
-                  subheaderTypographyProps={{ align: 'center' }}
-                  action={tier.title === mostPopularCabin ? <StarIcon /> : null}
-                  className={classes.cardHeader}
-                />
-                <CardContent>
-                  <div className={classes.cardPricing}>
-                    <Typography component="h4" variant="h5" color="textPrimary">
-                      ¢{tier.price} 
-                    </Typography>
-                    <Typography variant="h6" color="textSecondary">
-                    mil por Persona
-                    </Typography>
-                  </div>
-                  <ul>
-                    {tier.description.map((line) => (
-                      <Typography component="li" variant="subtitle1" align="center" key={line}>
-                        {line}
-                      </Typography>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            </Grid>
-          ))}
+            {
+                console.log(cabainsInfo)
+            }
+          {
+            cabainsInfo.map((tier, index) => (
+                // Enterprise card is full width at sm breakpoint
+                <Grid item key={index} xs={12} sm={6} md={4} lg={4}>
+                    <Card>
+                        <CardHeader
+                        title={tier.title}
+                        subheader={tier.subheader}
+                        titleTypographyProps={{ align: 'center' }}
+                        subheaderTypographyProps={{ align: 'center' }}
+                        action={tier.title === mostPopularCabin ? <StarIcon /> : null}
+                        className={classes.cardHeader}
+                        />
+                        <CardContent>
+                        <div className={classes.cardPricing}>
+                            <Typography component="h4" variant="h5" color="textPrimary">
+                            ¢{tier.price} 
+                            </Typography>
+                            <Typography variant="h6" color="textSecondary">
+                            mil por Persona
+                            </Typography>
+                        </div>
+                        <ul>
+                            {tier.description.map((line) => (
+                            <Typography component="li" variant="subtitle1" align="center" key={line}>
+                                {line}
+                            </Typography>
+                            ))}
+                        </ul>
+                        </CardContent>
+                    </Card>
+                </Grid>
+            ))
+            }
         </Grid>
       </Container>
     </React.Fragment>
