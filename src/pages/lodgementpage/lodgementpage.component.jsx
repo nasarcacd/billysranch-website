@@ -15,10 +15,10 @@ const LodgementPage = () => {
     return (
     <React.Fragment>
       <CssBaseline />
-      <Container maxWidth="sm" component="main" className={classes.heroContent}>
-        <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
+      <Container maxWidth="md" component="main" className={classes.heroContent}>
+        <p className={classes.title} align="center" color="textPrimary">
           Precios
-        </Typography>
+        </p>
         <Typography variant="h5" align="center" color="textSecondary" component="p">
           Todas nuestras cabinas están completamente equipadas con amplio parqueo, A/C, TV, Baño privado, WIFI, mini refri, y pila. 
         </Typography>

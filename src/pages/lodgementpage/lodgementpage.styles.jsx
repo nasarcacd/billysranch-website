@@ -9,7 +9,19 @@ const useStyles = makeStyles((theme) => ({
       },
     },
     heroContent: {
-      padding: theme.spacing(8, 0, 6),
+      marginTop: '7rem',
+      marginBottom: '3rem',
+
+      [theme.breakpoints.down('sm')]: {
+        marginTop: '1rem'
+      }
+    },
+    title: {
+      fontSize: '3rem',
+
+      [theme.breakpoints.down('sm')]: {
+          fontSize: '2rem'
+      }
     },
     cardHeader: {
       backgroundColor:
