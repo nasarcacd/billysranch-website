@@ -51,6 +51,9 @@ const ContactPage = () => {
     return(
         <Container maxWidth='xl'>
         <Grid container>
+            <Grid className={classes.social}>
+                <p>150 metros al oeste del centro diurno del adulto mayor</p>
+            </Grid>
             <Grid xs={12} item>
                 <div className={classes.social}>
                     {social.map((network, index) => (

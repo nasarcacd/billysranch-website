@@ -20,13 +20,13 @@ const tileData = [
      img: image2,
      title: 'Cabinas',
      author: 'Billy',
-     cols: 1,
+     cols: 2,
    },
    {
      img: image3,
      title: 'Gifs',
      author: 'Billy',
-     cols: 3,
+     cols: 2,
    },
    {
      img: image4,
@@ -44,7 +44,7 @@ const tileData = [
      img: image6,
      title: 'Pool',
      author: 'Billy',
-     cols: 4,
+     cols: 2,
    },
    {
      img: image7,
@@ -62,7 +62,7 @@ const tileData = [
      img: image9,
      title: 'Surtido',
      author: 'Billy',
-     cols: 3,
+     cols: 2,
    },
    {
      img: image10,
