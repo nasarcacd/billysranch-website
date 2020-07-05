@@ -13,11 +13,11 @@ import GoogleMapReact from 'google-map-react';
 
 
 const social = [
-{ name: 'Instagram', icon: InstagramIcon, url: 'https://www.instagram.com/billysranch' },
-{ name: 'Facebook', icon: FacebookIcon, url: 'https://www.facebook.com/BillysRanch' },
-{ name: 'billys.hojancha@gmail.com', icon: MailIcon, url: '#' },
-{ name: '(506) 4034-1141', icon: CallIcon, url: '#' },
-{ name: '(506) 8401-2344', icon: WhatsAppIcon, url: '#' },
+{ name: 'Instagram', icon: InstagramIcon, type: 'url', url: 'https://www.instagram.com/billysranch' },
+{ name: 'Facebook', icon: FacebookIcon, type: 'url', url: 'https://www.facebook.com/BillysRanch' },
+{ name: 'billys.hojancha@gmail.com', icon: MailIcon, type: 'email' },
+{ name: '(506) 4034-1141', icon: CallIcon, type: 'call', number: '50640341141' },
+{ name: '(506) 8401-2344', icon: WhatsAppIcon, type: 'url', url: 'https://api.whatsapp.com/send?phone=506+84012344' },
 ];
 
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
@@ -45,6 +45,7 @@ const defaultProps = {
     }
   }));
 
+
 const ContactPage = () => {
     const classes = useStyles();
 
@@ -58,16 +59,27 @@ const ContactPage = () => {
                 <div className={classes.social}>
                     {social.map((network, index) => (
                         <div key={index}>
-                            <Link display="block" href={network.url} key={network}>
-                            <Grid container direction="row" spacing={2} alignItems="center">
-                                <Grid item>
-                                <network.icon />
-                                </Grid>
-                                <Grid item>{network.name}</Grid>
-                            </Grid>
-                            </Link>
+                            {
+                                {
+                                'url': <Link display="block" href={network.url} key={index}>
+                                        <Grid container direction="row" spacing={2} alignItems="center">
+                                            <Grid item>
+                                            <network.icon />
+                                            </Grid>
+                                            <Grid item>{network.name}</Grid>
+                                        </Grid>
+                                        </Link>
+                                ,
+                                'call': <Grid container direction="row" spacing={2} alignItems="center">
+                                        <Grid item>
+                                            <network.icon />
+                                        </Grid>
+                                        <Grid item><a href={`tel:${network.number}`}>{network.name}</a></Grid>
+                                    </Grid>
+                                }[network.type]
+                            }
                         </div>
-                    ))}
+                     ))}
                 </div>      
             </Grid>
             <Grid xs={12} item>
