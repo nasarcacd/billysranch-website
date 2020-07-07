@@ -20,7 +20,7 @@ const social = [
 { name: '(506) 8401-2344', icon: WhatsAppIcon, type: 'url', url: 'https://api.whatsapp.com/send?phone=506+84012344' },
 ];
 
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
+const AnyReactComponent = ({ text }) => <div>{text}<FacebookIcon OnClick={()=> alert('hello')} /></div>;
 
 const defaultProps = {
     center: {
@@ -74,7 +74,9 @@ const ContactPage = () => {
                                         <Grid item>
                                             <network.icon />
                                         </Grid>
-                                        <Grid item><a href={`tel:${network.number}`}>{network.name}</a></Grid>
+                                        <Grid item>
+                                            <a href={`tel:${network.number}`}>{network.name}</a>
+                                        </Grid>
                                     </Grid>
                                 }[network.type]
                             }
@@ -82,6 +84,7 @@ const ContactPage = () => {
                      ))}
                 </div>      
             </Grid>
+            {/*
             <Grid xs={12} item>
             <div style={{ height: '60vh', width: '96%', marginLeft: '2%', marginRight: '2%' }}>
                 <GoogleMapReact
@@ -96,6 +99,10 @@ const ContactPage = () => {
                 />
                 </GoogleMapReact>
             </div>
+            </Grid>
+            */}
+            <Grid xs={12} item>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3928.404489114106!2d-85.42001558494894!3d10.06590489280602!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f9fbab8b34b5ea1%3A0xc86be261a5da61f1!2sBilly&#39;s%20Ranch!5e0!3m2!1sen!2sus!4v1594140896886!5m2!1sen!2sus" width="100%" height="500rem" frameborder="0" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
             </Grid>
         </Grid>
         </Container>
