@@ -1,6 +1,6 @@
 import React from 'react';
 import Container from '@material-ui/core/Container';
-import PhotoGallery from '../../components/ui/photo-gallery/sigle-line-grid-list.component';
+import PhotoGallery from '../../components/ui/photo-gallery/gallery';
 import HomeLayer from '../../components/ui/home-layer/MainFeaturedPost';
 const HomePage = () => {
     return(
