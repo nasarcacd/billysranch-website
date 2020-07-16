@@ -6,7 +6,9 @@ const HomePage = () => {
     return(
       <Container maxWidth="xl">
         <HomeLayer />
-        <PhotoGallery />
+        <Container maxWidth="lg">
+          <PhotoGallery />
+        </Container>
       </Container>
 )};
 
